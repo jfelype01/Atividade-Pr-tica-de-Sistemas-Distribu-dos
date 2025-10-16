@@ -1,7 +1,6 @@
 package Trabalho_SD;
 
 class RacerExtended extends Thread {
-	private Thread t;
 	private String threadName;
 	
 	RacerExtended (String name) {
@@ -13,8 +12,9 @@ class RacerExtended extends Thread {
 		//System.out.println("Running " + threadName);
 		try {
 //			while(true) {
-			for (int i = 0; i < 5; i++) {
+			for (int i = 0; i < 1000; i++) {
 				System.out.println("Racer: " + threadName + " - corrida " + (i+ 1));
+//				System.out.println("Racer " + threadName + " - imprimindo");
 				
 				Thread.sleep(1000);
 			}
@@ -22,14 +22,6 @@ class RacerExtended extends Thread {
 			System.out.println("Thread " + threadName + "interrupted.");
 		}
 		//System.out.println("Thread " + threadName + "exiting.");
-	}
-	
-	public void start() {
-		System.out.println("Starting " + threadName);
-		if (t == null) {
-			t = new Thread (this, threadName);
-			t.start();
-		}
 	}
 }
 
@@ -83,7 +75,11 @@ class Race_2 {
 public class ExtendedThread_Q01 {
 
 	public static void main(String[] args) {
-		Race race = new Race(10);
+//		RacerExtended racer = new RacerExtended("01");
+//		
+//		racer.start();
+		
+		Race_2 race = new Race_2(10);
 		
 		race.createRacers();
 		race.executeRace();

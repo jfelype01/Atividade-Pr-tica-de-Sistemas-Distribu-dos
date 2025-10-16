@@ -13,8 +13,9 @@ class RacerImplemented implements Runnable {
 		//System.out.println("Running " + threadName);
 		try {
 //			while (true) {
-			for(int i = 0; i < 5; i++) {
+			for(int i = 0; i < 1000; i++) {
 				System.out.println("Racer: " + threadName + " - corrida " + (i +  1));
+//				System.out.println("Racer: " + threadName + " - imprimindo");
 				
 				Thread.sleep(1000);
 			}
@@ -100,6 +101,10 @@ class Race {
 public class ImplementedThread_Q01 {
 
 	public static void main(String[] args) {
+//		RacerImplemented racer = new RacerImplemented("01");
+//		
+//		racer.start();
+		
 		Race race = new Race(10);
 		
 		race.createRacers();
